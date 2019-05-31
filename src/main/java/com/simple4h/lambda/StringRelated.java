@@ -26,5 +26,10 @@ public class StringRelated {
         log.warn("newFileName:{}", newFileName);
         List<Integer> ids = Arrays.stream(newstr.split(",")).map(Integer::valueOf).collect(Collectors.toList());
         log.warn("ids:{}", ids);
+
+        // String format
+        String text = "测试一下%d,这种写法是否有用%d";
+        text = String.format(text, 123, 666);
+        log.info(text);
     }
 }
