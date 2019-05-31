@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * Date: 2019-05-31 16:11
  */
 @Slf4j
-public class Study2 {
+public class StringRelated {
 
     // idsStr转换成List<Integer>
     public static void main(String[] args) {

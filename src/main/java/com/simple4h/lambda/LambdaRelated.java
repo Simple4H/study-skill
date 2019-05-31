@@ -18,9 +18,10 @@ import java.util.stream.Collectors;
  * Create By Simple4H
  * Date: 2019-05-31 14:35
  */
-public class Study1 {
+public class LambdaRelated {
 
     public static void main(String[] args) {
+        // 封装对象
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Gson gson = new Gson();
         List<UserDto> userDtos = new ArrayList<>();
