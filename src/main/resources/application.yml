@@ -17,10 +17,8 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
+  output:
+    ansi:
+      enabled: always
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
-
-kafka:
-  topic:
-    foo: foo.t

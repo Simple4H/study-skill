@@ -9,13 +9,12 @@ import com.simple4h.mapper.SimpleArticleMapper;
 import com.simple4h.service.IArticleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -28,7 +27,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ArticleServiceImpl implements IArticleService {
 
     @Autowired
-    private KafkaTemplate<String,String> kafkaTemplate;
+    private KafkaTemplate<String, String> kafkaTemplate;
 
     @Autowired
     private SimpleArticleMapper simpleArticleMapper;
@@ -39,9 +38,6 @@ public class ArticleServiceImpl implements IArticleService {
     @Autowired
     private Gson gson;
 
-    @Value("${app.topic.foo}")
-    private String topic;
-
     public Object getAll() {
         log.info("-------------------send kafka-------------------------");
         KafkaMessageDto kafkaMessageDto = new KafkaMessageDto();
@@ -51,7 +47,7 @@ public class ArticleServiceImpl implements IArticleService {
         mqDto.setPassword("123");
         kafkaMessageDto.setMessage(gson.toJson(mqDto));
         kafkaMessageDto.setSendTime(DateUtils.toLong(new Date()));
-        kafkaTemplate.send(topic,gson.toJson(kafkaMessageDto));
+        kafkaTemplate.send("abc123", gson.toJson(kafkaMessageDto));
         AtomicReference<SimpleArticle> simpleArticle = new AtomicReference<>(new SimpleArticle());
         transactionTemplate.execute(s -> {
             simpleArticle.set(simpleArticleMapper.selectByPrimaryKey(1));
@@ -59,4 +55,11 @@ public class ArticleServiceImpl implements IArticleService {
         });
         return simpleArticle.get();
     }
+
+    @Override
+    public String message() {
+        return "123";
+    }
+
+
 }

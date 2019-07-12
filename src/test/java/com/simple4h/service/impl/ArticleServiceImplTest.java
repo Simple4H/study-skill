@@ -1,16 +1,11 @@
 package com.simple4h.service.impl;
 
-import com.simple4h.Utils.DateUtils;
 import com.simple4h.service.IArticleService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 /**
  * Create By Simple4H
@@ -25,7 +20,7 @@ public class ArticleServiceImplTest {
 
     @Test
     public void getAll() {
-        System.out.println(iArticleService.getAll());
+        iArticleService.getAll();
     }
 
     @Test

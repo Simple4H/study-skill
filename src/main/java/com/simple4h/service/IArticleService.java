@@ -7,4 +7,6 @@ package com.simple4h.service;
 public interface IArticleService {
 
     Object getAll();
+
+    String message();
 }
