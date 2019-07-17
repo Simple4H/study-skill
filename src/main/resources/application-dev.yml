@@ -1,0 +1,26 @@
+
+spring:
+  redis:
+    port: 6379
+    password: 123456
+    host: 127.0.0.1
+  datasource:
+    username: root
+    password: Crescent1!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/db_personalwebsite
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: myGroup
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  output:
+    ansi:
+      enabled: always
+  profiles: dev
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
