@@ -1,4 +1,4 @@
-FROM simple4h/java8:v1.0
+FROM simple4h/centos_java:v1.0
 MAINTAINER simple4h
 ARG workdir=/app
 VOLUME ${workdir}
