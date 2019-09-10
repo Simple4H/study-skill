@@ -8,39 +8,34 @@ import lombok.Data;
  * Date: 2019-09-10 15:25
  */
 @Data
-public class SimpleArticle {
+public class SimpleMessage {
     /**
-    * 文章表id
+    * 信息表id
     */
     private Integer id;
 
     /**
-    * 标题
+    * 用户姓名
     */
-    private String title;
+    private String name;
 
     /**
-    * 内容
+    * 邮箱
     */
-    private String content;
+    private String email;
 
     /**
-    * 类型
+    * 手机
     */
-    private String tags;
+    private String phone;
 
     /**
-    * 状态
+    * 信息
     */
-    private String status;
+    private String message;
 
     /**
     * 创建时间
     */
     private Date createTime;
-
-    /**
-    * 最后一次更新时间
-    */
-    private Date updateTime;
 }

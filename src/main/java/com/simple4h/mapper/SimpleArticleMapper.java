@@ -4,7 +4,7 @@ import com.simple4h.domain.SimpleArticle;
 
 /**
  * Create By Simple4H
- * Date: 2019-07-09 20:51
+ * Date: 2019-09-10 15:25
  */
 public interface SimpleArticleMapper {
     int deleteByPrimaryKey(Integer id);
