@@ -116,4 +116,10 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    <select id="getAllTitle" resultType="java.lang.String">
+      select title from simple_article
+    </select>
+  <select id="getAllContent" resultType="java.lang.String">
+    select content from simple_article
+  </select>
 </mapper>
